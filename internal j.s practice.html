@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Javascript</title>
+    <script>
+        function MyFunction() {
+            document.getElementById('this').innerHTML = "Welcome to the Future!";
+            document.querySelector('#this').style.fontSize = "30px";
+        }
+    </script>
+    <style>
+        /* * {
+            font-size: 18px;
+        } */
+        ol li {
+            padding: 20px 0px;
+        }
+        .carmodel {
+            color: red; 
+            font-weight: bold;
+        }
+        .caryear {
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+        .carowner {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <p id="this"></p>
+    <button type="button" onclick="MyFunction()">click</button>
+
+    <h2>Heading Title</h2>
+    <p id="first"></p>
+
+    <p id="ade"></p>
+
+    <p style="color: blue;">10 - 1 equals?</p>
+    <p class="ola"></p>
+    <button type="button" onclick="myAnswer()">check answer</button>
+    
+    <button type="button" onclick="wait()">try it</button>
+    
+    <button type="button" onclick="alert(5 + 6)">try it</button>
+
+    <h1>Check Out</h1>
+    <p>Check the Correct Answer by Clicking on the button next to the form input.</p>
+
+    <ol>
+        <li id="one"></li>
+        <input type="text" id="done">
+        <button type="button" id="buton" onclick="handleClick()">View answer</button>
+
+        <li id="two"></li>
+        <input type="text" id="done2">
+        <button type="button" id="buton2" onclick="handleClick2()">View answer</button>
+
+        <li id="three"></li>
+        <input type="text" id="done3">
+        <button type="button" id="buton3" onclick="handleClick3()">View answer</button>
+
+        <li id="four"></li>
+        <input type="text" id="done4">
+        <button type="button" id="buton4" onclick="handleClick4()">View answer</button>
+
+        <li id="five"></li>
+        <input type="text" id="done5">
+        <button type="button" id="buton5" onclick="handleClick5()">View answer</button>
+    </ol>
+
+    <p>seperated by semi-colons ;</p>
+    <p id="semi"></p>
+    <h3 class="colon"></h3>
+
+    <button class="view" onclick="myView()">Click Me</button>
+    <p class="newdemo1"></p>
+    <p class="newdemo2"></p>
+
+    <p id="newone"></p>
+
+    <p class="oldone"></p>
+
+    <p id="olas"></p>
+
+    <p id="mine"></p>
+
+    <p id="next"></p>
+
+    <p id="prev"></p>
+    
+    <p id="prex"></p>
+
+    <p id="abiola"></p>
+
+    <p class="ademola"></p>
+
+    <p id="myPhone"></p>
+
+    <button type="button" onclick="window.print()">Clik to Print File</button>
+    
+  <script>
+    var q = myFunct(3, 10);
+    let myPhone = document.getElementById('myPhone');
+    
+    function myFunct(a, b) {
+        return a + b; 
+    };
+    myPhone.innerHTML = myFunct(3, 10);
+    
+
+    function myFunction(h1, h2, p3) {
+        return (h1 * h2) / p3;
+    }
+    document.querySelector('.ademola').innerHTML = myFunction(4, 10, 3);
+
+    let x = 10;
+    let y = 12;
+    let z = 10;
+    document.querySelector('#abiola').innerHTML = (x == y) + "<br>" + (x == z);
+
+    var k = 8;
+    var m = 5;
+    var l = k ** 2 - m ** 3;
+    document.getElementById('prev').innerHTML = l;
+
+    var k = 8;
+    var m = 5;
+    var l = Math.pow(m,3) - Math.pow(k,2);
+    document.getElementById('prex').innerHTML = l;
+    console.log(l);
+
+    let ade = 50;
+    ade++ + ade++ + ade-- + ade--;
+    let ola = ade;
+    document.getElementById('next').innerHTML = ola;
+
+    const vehicles = ["Hyundai", " Ford", " Skoda", " Citroen"]
+    vehicles [1] = " Honda";
+    vehicles.push(" Bugatti")
+    vehicles [16] = " Mercedes Benz"
+    document.getElementById('olas').innerHTML = vehicles;
+
+    const cars = {type: "Hyundai", model: "Sonata", year: "2010", color: "Navy-Blue"}
+    cars.year = " 2015";
+    cars.type = " Toyota";
+    cars.model = " Prius";
+    cars.driver = " Ademola";
+    document.getElementById('mine').innerHTML = "The " + `<span class="carmodel">${cars.type + cars.model}</span>` + " owner, with the year" + `<span class="caryear">${cars.year}</span>` + " was bought by" + `<span class="carowner">${cars.driver}</span>`  
+
+    const cherry = 'Mango';
+    const types = 'Toyota + Honda';
+    let total = cherry + ',' + ' ' + types;
+    document.querySelector('.oldone').innerHTML = total;
+
+    document.getElementById('newone').innerHTML = (5 * 6) + 4;
+
+    function myView() {
+        document.querySelector('.newdemo1').innerHTML = "Practice Makes Perfection!"
+        document.querySelector('.newdemo2').innerHTML = "Quote Me Anywhere!"
+    }
+    console.log(myView);
+
+    let o, w, e;
+    o = 15;
+    e = 3
+    w = o / e;
+    document.querySelector('.colon').innerHTML = w;
+
+    let a, b, c;
+    a = 5;
+    b = 10;
+    c = a - b;
+    document.getElementById('semi').innerHTML = c;
+    // window.alert("This page is Read-Only");
+    console.log(5 + 6);
+
+    function wait() {
+        document.write('5 + 6')
+    }
+    document.getElementById('first').innerHTML = "First Time in America";
+    document.getElementById('ade').innerHTML = "5 + 6";
+    function myAnswer() {
+        console.log(10 - 1);
+        document.querySelector('.ola').innerHTML = 10 - 1;
+        document.querySelector('.ola').style.fontSize = "30px";
+    }
+
+    
+    const buton = document.getElementById('buton');
+
+    buton.addEventListener('click', function handleClick() {
+        let initialText = 'Hide Answer';
+
+        if (buton.textContent.toLowerCase().includes(initialText.toLowerCase())) {
+            buton.innerHTML =
+            '<span>View Answer</span>';
+            
+                document.getElementById('done').value = ""
+            
+        } else {
+            buton.textContent = initialText;
+        }
+    });
+
+    document.getElementById('one').innerHTML = "What Controls The Fan?"
+    document.getElementById('done').value =""
+    function handleClick() {
+        document.getElementById('done').value = "The Regulator / Switch"
+    }
+
+    
+    const buton2 = document.getElementById('buton2');
+
+    buton2.addEventListener('click', function handleClick2() {
+        let initialText = 'Hide Answer';
+
+        if (buton2.textContent.toLowerCase().includes(initialText.toLowerCase())) {
+            buton2.innerHTML =
+            '<span>View Answer</span>';
+            
+                document.getElementById('done2').value = ""
+            
+        } else {
+            buton2.textContent = initialText;
+        }
+    });
+
+    document.getElementById('two').innerHTML = "Which building has the most stories on Earth?"
+    document.getElementById('done2').value =""
+    function handleClick2() {
+        document.getElementById('done2').value = "The Library"   
+    }
+
+
+    const buton3 = document.getElementById('buton3');
+
+    buton3.addEventListener('click', function handleClick3() {
+        let initialText = 'Hide Answer';
+
+        if (buton3.textContent.toLowerCase().includes(initialText.toLowerCase())) {
+            buton3.innerHTML =
+            '<span>View Answer</span>';
+                document.getElementById('done3').value = ""
+            } else {
+            buton3.textContent = initialText;
+        }
+    });
+
+    document.getElementById('three').innerHTML = "What goes high untimely but never come back low?"
+    document.getElementById('done3').value =""
+    function handleClick3() {
+        document.getElementById('done3').value = "Nigeria Billings"
+    }
+
+
+    const buton4 = document.getElementById('buton4');
+
+    buton4.addEventListener('click', function handleClick4() {
+        let initialText = 'Hide Answer';
+
+        if (buton4.textContent.toLowerCase().includes(initialText.toLowerCase())) {
+            buton4.innerHTML =
+            '<span>View Answer</span>';
+                document.getElementById('done4').value = ""
+            } else {
+            buton4.textContent = initialText;
+        }
+    });
+
+    document.getElementById('four').innerHTML = "The Heir is a son/daughter of who?"
+    document.getElementById('done4').value =""
+    function handleClick4() {
+        document.getElementById('done4').value = "The King"
+    }
+
+
+    const buton5 = document.getElementById('buton5');
+
+    buton5.addEventListener('click', function handleClick5() {
+        let initialText = 'Hide Answer';
+
+        if (buton5.textContent.toLowerCase().includes(initialText.toLowerCase())) {
+            buton5.innerHTML =
+            '<span>View Answer</span>';
+                document.getElementById('done5').value = ""
+            } else {
+            buton5.textContent = initialText;
+        }
+    });
+
+    document.getElementById('five').innerHTML = "I am something, the more you untie my wrappers, the more you cry. What am I?"
+    document.getElementById('done5').value =""
+    function handleClick5() {
+        document.getElementById('done5').value = "An Onion"
+    }
+
+
+    past_tense = []
+
+    var words = ["adopt", "lake", "confide", "grill", "plant", "time", "wave", "wish"]
+    for (let i = 0; i < words.length; i++) {
+        
+        if(words[i] -1 == "e"){
+            words[i] += "d"
+        }
+        else if(words[i] -1 == "y"){
+            words[i] += "ied"
+        }
+        else{
+            words[i] += ""
+        }
+        past_tense.push(words[i])
+    }
+    console.log(past_tense);
+
+    // public_static_String = NLP_verbPastTense(Stringverb); {
+		
+		
+	// 		Simple past tense algorithm as defined: http://web2.uvcs.uvic.ca/elc/studyzone/330/grammar/pasted.htm
+			
+	// 		Verb ending in...	
+	// 		e											| Add -D									| e.g. live
+	// 		Consonant +y								| Change y to i, then add -ED				| e.g. try
+	// 		One vowel + one consonant (but NOT w or y)	| Double the consonant, then add -ED		| e.g. tap
+	// 		anything else including w					| Add -ED									| e.g. boil
+		 
+		
+		
+	// 	Character consonants[] = {'b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','x','y','z'};
+	// 	Character vowels[] = {'a', 'e', 'i', 'o', 'u'};
+		
+	// 	String output = verb;
+		
+	// 	if(verb.length()==0){return "";}
+		
+	// 	if(verb.charAt(verb.length()-1)=='e'){
+	// 		output = verb + "d";
+	// 	}else if(Arrays.asList(consonants).contains(verb.charAt(verb.length()-2)) && verb.charAt(verb.length()-1)=='y'){
+	// 		output = verb.substring(0, verb.length()-1) + "ied";
+	// 	}else if(verb.length()>2 && !Arrays.asList(vowels).contains(verb.charAt(verb.length()-3)) && Arrays.asList(vowels).contains(verb.charAt(verb.length()-2)) && ( Arrays.asList(consonants).contains(verb.charAt(verb.length()-1)) && verb.charAt(verb.length()-1)!='w' && verb.charAt(verb.length()-1)!='y' )){
+	// 		output = verb + verb.charAt(verb.length()-1) + "ed";
+	// 	}else{
+	// 		output = verb + "ed";
+	// 	}
+		
+		
+	// 	return output;
+		
+	// }
+  </script>  
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First JavaScript</title>
+    <style>
+        .dev {
+            font-size: 20px;
+            
+        }
+        #Image {
+            margin-left: 40%;
+        }
+        #buton {
+            margin-left: 40%;
+        }
+    </style>
+</head>
+<body>
+    <h2>My First Javascript</h2>
+    <button type="button" onclick="document.querySelector('#demo').innerHTML = Date()">
+    Click Me To Display Date and Time</button>
+
+    <p id="demo"></p>
+    
+    <h3>Change of HTML Output</h3>
+    <p id="demo2">Change the element output on click</p>
+    <button type="button" onclick="document.getElementById('demo2').innerHTML = 'Hello World of Javascript!'">click me</button>
+
+    <p id="level">Ademola</p>
+    <button type="button" onclick="document.getElementById('level').innerHTML += ' '+'Adeoye'">Click Here</button>
+    <br>
+
+    <img id="Image" src="./J.S IMAGES/pic_bulboff.gif" alt="">
+    <br><br>
+    <button type="button" id="buton" onmouseover="document.querySelector('#Image').src='J.S IMAGES/pic_bulboff.gif'">Hover to Turn On!</button>
+    <!-- <button type="button" onmouseover="document.querySelector('#Image').src='J.S IMAGES/pic_bulb_on.gif'">Hover     to Turn On!</button> -->
+
+    <p id="bold">Click to Make me Bold!</p>
+    <button type="submit" onclick="document.getElementById('bold').style.fontSize ='50px'">Make it Bold</button>
+    
+    <p id="imo">Knowledge Rules The Universe...</p>
+    <button type="button" onclick="document.getElementById('imo').innerHTML = 'True or False?', document.getElementById('imo').style.fontFamily ='Verdana',document.getElementById('imo').style.fontSize = '60px'">Change the Statement</button>
+
+    <p class="good">Being Good is indeed a Great Achievement</p>
+    <button onmouseover="document.querySelector('.good').style.color ='yellow'" onmouseout="document.querySelector('.good').style.color ='red'">Click</button>
+    
+    <p class="dev">var - Declares a variable
+        <br>
+        let - Declares a block variable
+        <br>
+        const - Declares a block constant
+        <br>
+        if - Marks a block of statements to be executed on a condition
+        <br>
+        switch - Marks a block of statements to be executed in different cases
+        <br>
+        for - Marks a block of statements to be executed in a loop
+        <br>
+        function - Declares a function
+        <br>
+        return - Exits a function
+        <br>
+        try - Implements error handling to a block of statements</p>
+
+        <script>
+            const buton = document.getElementById('buton');
+
+            buton.addEventListener('mouseover', function handleClick() {
+                let initialText = 'Hover To Turn On';
+
+                if (buton.textContent.toLowerCase().includes(initialText.toLowerCase())) {
+                    buton.innerHTML =
+                    '<span>Hover To Turn Off</span>';                   
+                    document.querySelector('#Image').src='J.S IMAGES/pic_bulb_on.gif'                   
+                } else {
+                    buton.textContent = initialText;
+                }
+            });
+        </script>
+
+        <!-- <script>
+            const buton = document.getElementById('buton');
+
+            // ✅ Toggle button text on click
+            buton.addEventListener('click', function handleClick() {
+            const initialText = 'Click Me';
+
+            if (buton.textContent.toLowerCase().includes(initialText.toLowerCase())) {
+                buton.innerHTML =
+                '<span style="background-color: lime">Button Clicked</span>';
+            } else {
+                buton.textContent = initialText;
+            }
+            });
+
+        </script> -->
+</body>
+</html>

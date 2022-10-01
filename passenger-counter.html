@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            margin: auto;
+        }
+        .col-6 {
+            background-color: lavender;
+        }
+        .count {
+            font-size: 25px;
+        }
+        #checkin {
+            /* display: none; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6 py-5">
+                <h3 id="welcome-el"></h3>
+                <h1 class="py-5 font-weight-bold">People entered:</h1>
+                <p id="counter" class="count font-weight-bold">0</p>
+                <button id="increment-btn" onclick="increment()" class="btn btn-default bg-danger text-white font-weight-bold">INC</button>
+                <button id="decrement-btn" onclick="decrement()" class="btn btn-default bg-danger text-white font-weight-bold">DEC</button>
+                <br><br>
+                <p id="saver" class="count font-weight-bold">__ <span><i class="fa fa-check-square-o" id="checkin" aria-hidden="true"></i></span></p>
+                
+                <button id="save-btn" onclick="save()" class="btn btn-default bg-danger text-white font-weight-bold">SAVE</button>
+                <p id="save-el">Previous Entries: </p>
+                <br>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+
+    <script>
+        // document.getElementById('counter').innerText = 5;
+
+        let bonusPoints = 50;
+        console.log(bonusPoints);
+
+        bonusPoints = bonusPoints + 50;
+        console.log(bonusPoints);
+
+        bonusPoints = bonusPoints - 75;
+        console.log(bonusPoints);
+
+        bonusPoints = bonusPoints + 45;
+        console.log(bonusPoints);
+
+        // function incrementer() {
+        //     let beam = 0
+        //     beams = beam += 1; beam++;
+        //     document.getElementById('counter').innerText = beams;
+        //     console.log(beam);
+        // }
+        // incrementer()
+        
+
+        function myArr() {
+            let arr = 42; ray = 48;
+            Arr = arr + ray
+            console.log(Arr);
+        }
+        myArr();
+         
+        let lap1 = 34
+        let lap3 = 33
+        let lap6 = 36
+
+        function myBid() {
+            lap1 + lap3 + lap6
+            console.log(lap1 + lap3 + lap6);
+        }
+        myBid()
+        
+        let countEl = document.getElementById("counter")
+        let saveEl = document.getElementById('save-el')
+        
+        counter = 0;
+        function increment() {
+            counter += 1;
+            countEl.innerText = counter;
+            // console.log(counter)
+        }
+
+        function decrement() {
+            counter -= 1;
+            countEl.innerText = counter;
+        }
+
+        function save() {
+            document.getElementById('saver').innerText = counter;
+
+            let countStr = " " + counter + " - "
+            saveEl.innerText += countStr
+
+        //    if (counter > 0) {
+        //     saveEl.innerText += " " + counter + " - " 
+        //    }           
+            // console.log(counter)   
+            
+        }
+
+        
+
+
+        // 2. Create a variable that contains both the count and the dash separator, i.e. "12 - "
+        // 3. Render the variable in the saveEl using innerText
+        // NB: Make sure to not delete the existing content of the paragraph
+        
+
+
+        var username = "per"
+        var message = "You have three new notifications";
+        console.log(message + ", " + username + " " + "Hour" + "!");
+
+        var messageToUser = (message + ", " + username + " " + "Hour" + "!");
+        console.log(messageToUser);
+
+        var name = "Adeoye Sodeeq Ademola"
+        var greeting = "Hi, my name is "
+        var myGreeting = greeting + name + "!";
+        console.log(myGreeting);
+
+        console.log("100" + 100 + 100);
+        console.log(100 + '100' + 100);
+        console.log(100 + 100 + '100');
+
+        var welcomeEl = document.getElementById('welcome-el')
+
+        var names = "Dev. Kelvin Powell"
+        var greetings = "Welcome back"
+        myGreetings = greetings + "," + " " + names
+
+        welcomeEl.innerText = myGreetings;
+        console.log(myGreetings);
+
+        welcomeEl.innerText += " " + "👋"
+        
+        // let lapsCompleted = -1;
+        // function increment() {
+        //     lapsCompleted += 1;
+        //     document.getElementById('counter').innerText = lapsCompleted;
+
+        //     console.log(lapsCompleted);
+        // }
+        // increment()
+        
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0c390bb7a0.js" crossorigin="anonymous"></script>   
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Counter</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
     <style>
@@ -17,9 +17,7 @@
         .count {
             font-size: 25px;
         }
-        #checkin {
-            /* display: none; */
-        }
+        
     </style>
 </head>
 <body>
@@ -29,11 +27,11 @@
             <div class="col-6 py-5">
                 <h3 id="welcome-el"></h3>
                 <h1 class="py-5 font-weight-bold">People entered:</h1>
-                <p id="counter" class="count font-weight-bold">0</p>
+                <p id="count" class="count font-weight-bold">0</p>
                 <button id="increment-btn" onclick="increment()" class="btn btn-default bg-danger text-white font-weight-bold">INC</button>
                 <button id="decrement-btn" onclick="decrement()" class="btn btn-default bg-danger text-white font-weight-bold">DEC</button>
                 <br><br>
-                <p id="saver" class="count font-weight-bold">__ <span><i class="fa fa-check-square-o" id="checkin" aria-hidden="true"></i></span></p>
+                <p id="saver" class="count font-weight-bold">____</p>
                 
                 <button id="save-btn" onclick="save()" class="btn btn-default bg-danger text-white font-weight-bold">SAVE</button>
                 <p id="save-el">Previous Entries: </p>
@@ -84,32 +82,26 @@
         }
         myBid()
         
-        let countEl = document.getElementById("counter")
+        let countEl = document.getElementById("count")
         let saveEl = document.getElementById('save-el')
         
-        counter = 0;
+        count = 0;
         function increment() {
-            counter += 1;
-            countEl.innerText = counter;
-            // console.log(counter)
+            count += 1;
+            countEl.innerText = count;
+            
         }
 
         function decrement() {
-            counter -= 1;
-            countEl.innerText = counter;
+            count -= 1;
+            countEl.innerText = count;
         }
 
         function save() {
-            document.getElementById('saver').innerText = counter;
-
-            let countStr = " " + counter + " - "
-            saveEl.innerText += countStr
-
-        //    if (counter > 0) {
-        //     saveEl.innerText += " " + counter + " - " 
-        //    }           
-            // console.log(counter)   
-            
+            let countStr = count + " - "
+            saveEl.textContent += countStr
+            countEl.textContent = 0
+            count = 0
         }
 
         
@@ -139,7 +131,7 @@
 
         var welcomeEl = document.getElementById('welcome-el')
 
-        var names = "Dev. Kelvin Powell"
+        var names = "Dev. Kelvin"
         var greetings = "Welcome back"
         myGreetings = greetings + "," + " " + names
 
